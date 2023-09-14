@@ -34,4 +34,3 @@ python ingest.py
 python ask.py
 ```
 ![image2](image2.png)
-<br>This is bare-bones, but it should be enough to get started.
