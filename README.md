@@ -14,9 +14,9 @@ conda activate atd
 pip install -r requirements.txt
 ```
 ## Running
-Now, we must choose whether to go to the Hugging Face or the OpenAI route.
+We must choose whether to go to the Hugging Face or the OpenAI route.
 ### Hugging Face Example:
-We'll make the Hugging Face config the one to use. Then, ingest the data to persistent storage and ask questions related to the documents. The model's may take a while to load especially if they need to download the models.
+We'll make the Hugging Face config the one to use. Then, ingest the data to persistent storage and ask questions related to the documents. The models may take a while to load, especially if they need to download the models.
 ```
 cp config_hf.py config.py
 python ingest.py
@@ -34,4 +34,4 @@ python ingest.py
 python ask.py
 ```
 ![image2](image2.png)
-This is bare bones, but it should be enough to get started.
+<br>This is bare-bones, but it should be enough to get started.
