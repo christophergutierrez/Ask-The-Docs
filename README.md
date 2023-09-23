@@ -3,7 +3,7 @@
 This simple set of programs allows you to ask a chatbot about local documents. It assumes a GPU.
 Using the Hugging Face models, it can be entirely local, with no internet required. The computer it runs on should be robust for any non-trivial models. I only worked with quantized models. 
 Using OpenAI, the computer requirements are minimal, but it uses an API. There is an API cost, and the internet is required. 
-The starting values are non-optimal. The emphasis was on simplicity. 
+The starting values and code are non-optimal. This code is not meant as an actual application. It's meant to touch on key concepts for educational purposes. The emphasis for this code was on simplicity.
 ## Installation
 Clone the repo, cd into it, install fresh conda environment with python >=3.10, then pip install the requirements.
 ```
