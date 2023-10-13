@@ -6,6 +6,8 @@ from langchain.document_loaders import (
     TextLoader,
     UnstructuredHTMLLoader,
     CSVLoader,
+    JSONLoader,
+    PythonLoader
 )
 from langchain.embeddings import (
     HuggingFaceInstructEmbeddings,
@@ -28,33 +30,47 @@ def load_documents(source_dir):
     """Load documents from a soure directory into memory."""
     pdf_loader = DirectoryLoader(
         source_dir,
-        glob="./*.pdf",
+        glob="./**/*.pdf",
         loader_cls=PyPDFLoader,
         use_multithreading=True,
     )
     pdf = pdf_loader.load()
     txt_loader = DirectoryLoader(
         source_dir,
-        glob="./*.txt",
+        glob="./**/*.txt",
         loader_cls=TextLoader,
         use_multithreading=True,
     )
     txt = txt_loader.load()
     csv_loader = DirectoryLoader(
         source_dir,
-        glob="./*.csv",
+        glob="./**/*.csv",
         loader_cls=CSVLoader,
         use_multithreading=True,
     )
     csv = csv_loader.load()
     html_loader = DirectoryLoader(
         source_dir,
-        glob="./*.html",
+        glob="./**/*.html",
         loader_cls=UnstructuredHTMLLoader,
         use_multithreading=True,
     )
     html = html_loader.load()
-    all_documents = pdf + txt + html + csv
+    py_loader = DirectoryLoader(
+        source_dir,
+        glob="./**/*.py",
+        loader_cls=PythonLoader,
+        use_multithreading=True,
+    )
+    py = py_loader.load()
+    md_loader = DirectoryLoader(
+        source_dir,
+        glob="./**/*.md",
+        loader_cls=TextLoader,
+        use_multithreading=True,
+    )
+    md = md_loader.load()
+    all_documents = pdf + txt + html + csv + py + md
     return all_documents
 
 
